@@ -6,6 +6,6 @@ RUN mvn -f /home/LoadGen/pom.xml clean package
 
 # Package stage
 FROM openjdk:11-jre-slim
-COPY --from=build /home/LoadGen/target/LoadGen-0.0.1-SNAPSHOT.jar /usr/local/lib/LoadGen.jar
+COPY --from=build /home/LoadGen/target/LoadGen-1.0.jar /usr/local/lib/LoadGen.jar
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","/usr/local/lib/LoadGen.jar"]
